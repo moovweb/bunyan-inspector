@@ -28,8 +28,9 @@ sandbox.console = {
     log: logger.debug.bind(logger)
 };
 
-var context = new vm.createContext(sandbox);//debugger;
+var context = new vm.createContext(sandbox);
 var script = new vm.Script('count += 1;  animal += "t"; console.log(count); console.log(animal);');
+// var script = new vm.Script('count += 1;  animal += "t"; debugger; console.log(count); console.log(animal);');
 
 http.createServer(function (req, res) {
  for (var i = 0; i < 10; ++i) {
